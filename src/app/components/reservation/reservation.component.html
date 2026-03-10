@@ -1,0 +1,50 @@
+<section class="section reservation reveal" id="reservations">
+    <div class="container">
+        <h2 class="section-title">Reserve Your Table for Tonight</h2>
+        <p class="res-subtitle">Dinner service begins at 7:00 PM – reservations highly recommended.</p>
+
+        <div class="res-form">
+            <form (ngSubmit)="onSubmit()" #resForm="ngForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="John Doe"
+                            [(ngModel)]="formData.name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 99999 99999"
+                            [(ngModel)]="formData.phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="date">Date</label>
+                        <input type="date" id="date" name="date" class="form-control" [min]="minDate"
+                            [(ngModel)]="formData.date" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="time">Time</label>
+                        <input type="time" id="time" name="time" class="form-control" min="19:00" max="23:00"
+                            [(ngModel)]="formData.time" required>
+                    </div>
+                    <div class="form-group full">
+                        <label class="form-label" for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" class="form-control" [(ngModel)]="formData.guests" required
+                            style="cursor: pointer;">
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6+ Guests (Large Party)</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-secondary btn-submit" [disabled]="!resForm.valid">Book My
+                    Table</button>
+                <p style="text-align: center; color: #888; font-size: 0.85rem; margin-top: 1rem;">
+                    <i class="fa-solid fa-lock" style="color: var(--secondary)"></i> Your table reservation will be
+                    confirmed via SMS.
+                </p>
+            </form>
+        </div>
+    </div>
+</section>

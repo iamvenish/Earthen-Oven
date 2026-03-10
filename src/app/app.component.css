@@ -1,0 +1,10 @@
+.with-padding {
+    padding-top: 80px;
+    /* Adjust based on header height */
+}
+
+@media (max-width: 768px) {
+    .with-padding {
+        padding-top: 70px;
+    }
+}

@@ -1,0 +1,18 @@
+<header class="header" [class.scrolled]="isScrolled" [class.not-home]="!isHomePage">
+    <div class="container nav-container">
+        <a (click)="scrollTo('home')" class="logo" style="cursor: pointer;">Earthen Oven</a>
+
+        <div class="mobile-toggle" (click)="toggleMobileMenu()">
+            <i class="fa-solid" [class.fa-bars]="!isMobileMenuActive" [class.fa-xmark]="isMobileMenuActive"></i>
+        </div>
+
+        <nav class="nav-menu" [class.active]="isMobileMenuActive">
+            <a (click)="scrollTo('about')" class="nav-link" style="cursor: pointer;">About</a>
+            <a (click)="scrollTo('menu')" class="nav-link" style="cursor: pointer;">Menu</a>
+            <a (click)="scrollTo('experience')" class="nav-link" style="cursor: pointer;">Experience</a>
+            <a (click)="scrollTo('reviews')" class="nav-link" style="cursor: pointer;">Reviews</a>
+            <a (click)="scrollTo('location')" class="nav-link" style="cursor: pointer;">Location</a>
+            <a (click)="scrollTo('reservations')" class="nav-btn" style="cursor: pointer;">Book Table</a>
+        </nav>
+    </div>
+</header>
